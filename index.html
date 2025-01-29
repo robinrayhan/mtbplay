@@ -4,31 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fullscreen Video</title>
+    <script src="https://fast.wistia.com/player.js" async></script>
     <style>
         * { margin: 0; padding: 0; overflow: hidden; }
-        body { background-color: black; }
-        iframe {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+        body { background-color: black; display: flex; align-items: center; justify-content: center; height: 100vh; }
+        wistia-player {
             width: 100vw;
             height: 100vh;
-            border: none;
         }
     </style>
 </head>
 <body>
-    <iframe id="videoPlayer" src="https://www.youtube.com/embed/FwBRRKeCowg?autoplay=1&loop=1&playlist=FwBRRKeCowg&controls=0&modestbranding=1&showinfo=0&rel=0&fs=0" allow="autoplay"></iframe>
+    <wistia-player id="videoPlayer" media-id="bsm3wypw8s" autoplay loop></wistia-player>
+    
     <script>
-        let video1 = "https://www.youtube.com/embed/FwBRRKeCowg?autoplay=1&loop=1&playlist=FwBRRKeCowg&controls=0&modestbranding=1&showinfo=0&rel=0&fs=0";
-        let video2 = "https://www.youtube.com/embed/s2peeOM5i08?autoplay=1&loop=1&playlist=s2peeOM5i08&controls=0&modestbranding=1&showinfo=0&rel=0&fs=0";
+        let video1 = "bsm3wypw8s";
+        let video2 = "ggtb6zqfgr";
         let videoPlayer = document.getElementById("videoPlayer");
         let switched = false;
 
         function switchVideo() {
             if (!switched) {
-                videoPlayer.src = video2;
+                videoPlayer.setAttribute("media-id", video2);
                 switched = true;
             }
         }
