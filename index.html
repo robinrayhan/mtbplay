@@ -4,28 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fullscreen Video</title>
-    <script src="https://fast.wistia.com/player.js" async></script>
+    <script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
     <style>
         * { margin: 0; padding: 0; overflow: hidden; }
         body { background-color: black; display: flex; align-items: center; justify-content: center; height: 100vh; }
-        wistia-player {
+        .wistia_embed {
             width: 100vw;
             height: 100vh;
         }
     </style>
 </head>
 <body>
-    <wistia-player id="videoPlayer" media-id="bsm3wypw8s" autoplay loop></wistia-player>
+    <div class="wistia_embed wistia_async_bsm3wypw8s videoFoam=true" id="wistiaPlayer"></div>
     
     <script>
         let video1 = "bsm3wypw8s";
         let video2 = "ggtb6zqfgr";
-        let videoPlayer = document.getElementById("videoPlayer");
         let switched = false;
 
         function switchVideo() {
             if (!switched) {
-                videoPlayer.setAttribute("media-id", video2);
+                Wistia.api("wistiaPlayer").replaceWith(video2, { autoPlay: true, loop: true });
                 switched = true;
             }
         }
