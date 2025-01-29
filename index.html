@@ -7,31 +7,28 @@
     <style>
         * { margin: 0; padding: 0; overflow: hidden; }
         body { background-color: black; }
-        video {
+        iframe {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
             width: 100vw;
             height: 100vh;
-            object-fit: cover;
+            border: none;
         }
     </style>
 </head>
 <body>
-    <video id="videoPlayer" autoplay loop muted>
-        <source src="https://embed.wistia.com/deliveries/bdbda7a58eeb6c31752a5f21854f947c537e2e6c.bin" type="video/mp4">
-    </video>
+    <iframe id="videoPlayer" src="https://www.youtube.com/embed/0sAHEMif9EY?autoplay=1&loop=1&playlist=0sAHEMif9EY" allow="autoplay"></iframe>
     <script>
-        let video1 = "https://embed.wistia.com/deliveries/bdbda7a58eeb6c31752a5f21854f947c537e2e6c.bin";
-        let video2 = "https://embed.wistia.com/deliveries/c78c2e72206b3449e2de9ac22219d4b2bc4e7d46.bin";
+        let video1 = "https://www.youtube.com/embed/0sAHEMif9EY?autoplay=1&loop=1&playlist=0sAHEMif9EY";
+        let video2 = "https://www.youtube.com/embed/vYNWV-P65rY?autoplay=1&loop=1&playlist=vYNWV-P65rY";
         let videoPlayer = document.getElementById("videoPlayer");
         let switched = false;
 
         function switchVideo() {
             if (!switched) {
                 videoPlayer.src = video2;
-                videoPlayer.play();
                 switched = true;
             }
         }
