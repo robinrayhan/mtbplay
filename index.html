@@ -28,13 +28,16 @@
         let videoPlayer = document.getElementById("videoPlayer");
         let switched = false;
 
-        document.body.addEventListener("touchstart", function() {
+        function switchVideo() {
             if (!switched) {
                 videoPlayer.src = video2;
                 videoPlayer.play();
                 switched = true;
             }
-        });
+        }
+
+        document.body.addEventListener("touchstart", switchVideo);
+        document.body.addEventListener("click", switchVideo);
     </script>
 </body>
 </html>
