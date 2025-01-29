@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fullscreen Video</title>
+    <style>
+        * { margin: 0; padding: 0; overflow: hidden; }
+        body { background-color: black; }
+        video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <video id="videoPlayer" autoplay loop muted>
+        <source src="https://embed.wistia.com/deliveries/bdbda7a58eeb6c31752a5f21854f947c537e2e6c.bin" type="video/mp4">
+    </video>
+    <script>
+        let video1 = "https://embed.wistia.com/deliveries/bdbda7a58eeb6c31752a5f21854f947c537e2e6c.bin";
+        let video2 = "https://embed.wistia.com/deliveries/c78c2e72206b3449e2de9ac22219d4b2bc4e7d46.bin";
+        let videoPlayer = document.getElementById("videoPlayer");
+        let switched = false;
+
+        document.body.addEventListener("touchstart", function() {
+            if (!switched) {
+                videoPlayer.src = video2;
+                videoPlayer.play();
+                switched = true;
+            }
+        });
+    </script>
+</body>
+</html>
