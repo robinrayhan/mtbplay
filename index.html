@@ -15,7 +15,7 @@
     </style>
 </head>
 <body>
-    <div class="wistia_embed wistia_async_bsm3wypw8s videoFoam=true" id="wistiaPlayer"></div>
+    <div class="wistia_embed wistia_async_bsm3wypw8s videoFoam=true" id="wistiaPlayer" data-wistia-player="true" data-wistia-muted="true"></div>
     
     <script>
         let video1 = "bsm3wypw8s";
@@ -24,7 +24,7 @@
 
         function switchVideo() {
             if (!switched) {
-                Wistia.api("wistiaPlayer").replaceWith(video2, { autoPlay: true, loop: true });
+                Wistia.api("wistiaPlayer").replaceWith(video2, { autoPlay: true, loop: true, muted: true });
                 switched = true;
             }
         }
